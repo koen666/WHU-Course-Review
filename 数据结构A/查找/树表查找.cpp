@@ -45,6 +45,13 @@ BSTNode* insert(BSTNode* root, int val)
     return root;
 }
 
+/*
+删除节点时需要考虑三种情况：
+   a. 被删除节点是叶子节点，直接删除即可。
+   b. 被删除节点只有一个子节点，用子节点替代被删除节点。
+   c. 被删除节点有两个子节点，找到其右子树的最小节点（或左子树的最大节点）替代被删除节点，然后删除该最小节点（或最大节点）。
+*/
+
 bool deleteNode(BSTNode*& root, int key)
 {
     if (root == NULL)
