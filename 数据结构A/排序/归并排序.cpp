@@ -42,7 +42,7 @@ void Merge(vector<int>& R, int low, int mid, int high)
         R[i] = temp[k];
 }
 
-//递归版本
+//递归版本 ---> 学这个就行了
 void MergeSort2(vector<int>& R, int n)
 {
     _MergeSort2(R, 0, n-1); 

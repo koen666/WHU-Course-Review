@@ -1,5 +1,7 @@
 #include<iostream>
 #include <vector>
+#include<algorithm>
+#include<queue>
 using namespace std;
 
 //选择排序包含简单选择排序和堆排序
@@ -82,6 +84,9 @@ void HeapSort(vector<int>& R, int n) {
     }
 }
 
+// 还有实现大小根堆更简单的方式：STL中的priority_queue
+priority_queue<int> maxHeap;
+priority_queue<int, vector<int>, greater<int>> minHeap;
 
 void printVector(const vector<int>& R) {
     for (int val : R) {
