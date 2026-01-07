@@ -33,6 +33,7 @@ public:
         p->next = head->next; // p的下一个指向原首结点
         head->next = p;       // 头结点指向新结点p
         return true;
+    }
         
     bool pop(T& e) {
         if (head->next == NULL) return false; // 栈空判断 
