@@ -1,5 +1,7 @@
 #include<iostream>
 #include<string>
+#include<queue>
+#include<vector>
 using namespace std;
 
 const int MAXV = 100; 
@@ -79,5 +81,51 @@ void AdjGraph::DispAdjGraph()
             p = p->nextarc; // 移向下一条边
         }
         cout << "\n";
+    }
+}
+
+//DFS和BFS
+
+vector<int> visited(MAXV, 0); //访问标志数组
+
+void DFS(AdjGraph& G,int v)
+{
+    cout<<v<<" "; //访问节点
+    visited[v]=1; //标记已访问
+
+    ArcNode* p=G.adjlist[v].firstarc; //p指向第一个邻接点
+    while(p!=NULL)
+    {
+        int w=p->adjvex; //w为邻接点下标
+        if(visited[w]==0) //如果未访问
+            DFS(G,w); //递归访问
+        p=p->nextarc; //指向下一个邻接点
+    }
+}
+
+void BFS(AdjGraph& G,int v)
+{
+    queue<int> q; //辅助队列
+    cout<<v<<" "; //访问节点
+    visited[v]=1; //标记已访问
+    q.push(v); //入队
+
+    while(!q.empty())
+    {
+        int u=q.front(); //取队头元素
+        q.pop(); //出队
+
+        ArcNode* p=G.adjlist[u].firstarc; //p指向第一个邻接点
+        while(p!=NULL)
+        {
+            int w=p->adjvex; //w为邻接点下标
+            if(visited[w]==0) //如果未访问
+            {
+                cout<<w<<" "; //访问节点
+                visited[w]=1; //标记已访问
+                q.push(w); //入队
+            }
+            p=p->nextarc; //指向下一个邻接点
+        }
     }
 }

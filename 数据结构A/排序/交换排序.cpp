@@ -45,6 +45,7 @@ int Partition(vector<int>& R, int low, int high)
     R[low] = pivot;
     return low;
 }
+
 void QuickSort(vector<int>& R, int low, int high)
 {
     if(low<high)
