@@ -82,7 +82,8 @@ private:
     }
 
     // --- 删除的递归实现 (核心难点) ---
-    Node* removeRec(Node* node, int val) {
+    Node* removeRec(Node* node, int val) 
+    {
         if (node == nullptr) return nullptr;
 
         // 1. 先找到要删除的节点

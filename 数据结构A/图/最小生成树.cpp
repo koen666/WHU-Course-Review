@@ -86,7 +86,7 @@ struct Edge {
 int parent[MAXV]; // 并查集存储结构 
 int rnk[MAXV];    // 存储结点的秩 
 
-// 并查集初始化 [cite: 511]
+// 并查集初始化 
 void Init(int n) {
     for (int i = 0; i < n; i++) {
         parent[i] = i; // 初始时每个顶点自成一个集合 

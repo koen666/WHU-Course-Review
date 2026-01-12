@@ -25,7 +25,7 @@ void BubbleSort(vector<int>& R, int n)
     }
 }
 
-//快速排序 -> 分治思想，选定一个基准元素，将数组划分为两部分，一部分小于基准，一部分大于基准，然后递归排序两部分
+//快速排序 -> 分治思想，选定一个基准元素    ，将数组划分为两部分，一部分小于基准，一部分大于基准，然后递归排序两部分
 int Partition(vector<int>& R, int low, int high)
 {
     int pivot=R[low];
